@@ -39,6 +39,7 @@ img.emoji {
 <link rel="stylesheet" id="elementor-post-6-css" href="./wp-content/uploads/elementor/css/post-6.css?ver=1661903587" type="text/css" media="all">
 <link rel="stylesheet" id="elementor-post-230-css" href="./wp-content/uploads/elementor/css/post-230.css?ver=1661893126" type="text/css" media="all">
 <link rel="stylesheet" id="elementor-post-41-css" href="./wp-content/uploads/elementor/css/post-41.css?ver=1661893289" type="text/css" media="all">
+<link rel="stylesheet" id="loftloader-lite-animation-css" href="./wp-content/plugins/loftloader/assets/css/loftloader.min.css?ver=2022022501" type="text/css" media="all">
 <link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPT+Serif%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPT+Serif+Caption%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=6.0.2" type="text/css" media="all">
 <link rel="stylesheet" id="elementor-icons-shared-0-css" href="./wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3" type="text/css" media="all">
 <link rel="stylesheet" id="elementor-icons-fa-solid-css" href="./wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.15.3" type="text/css" media="all">
@@ -54,8 +55,30 @@ img.emoji {
 <link rel="shortlink" href="./index.html">
 <link rel="alternate" type="application/json+oembed" href="./wp-json/oembed/1.0/embed/index.html?url=.%2F">
 <link rel="alternate" type="text/xml+oembed" href="./wp-json/oembed/1.0/embed/index.html?url=.%2F&#038;format=xml">
+<style id="loftloader-lite-custom-bg-color">#loftloader-wrapper .loader-section {
+	background: #000000;
+}</style>
+<style id="loftloader-lite-custom-bg-opacity">#loftloader-wrapper .loader-section {
+	opacity: 1;
+}</style>
+<style id="loftloader-lite-custom-loader">#loftloader-wrapper.pl-imgloading #loader {
+	width: 150px;
+}
+#loftloader-wrapper.pl-imgloading #loader span {
+	background-size: cover;
+	background-image: url(./wp-content/uploads/2022/08/Group.png);
+}</style>
 </head>
-<body class="home page-template-default page page-id-6 wp-custom-logo elementor-default elementor-template-full-width elementor-kit-5 elementor-page elementor-page-6 elementor-page-15">
+<body class="home page-template-default page page-id-6 wp-custom-logo loftloader-lite-enabled elementor-default elementor-template-full-width elementor-kit-5 elementor-page elementor-page-6 elementor-page-15">
+<div id="loftloader-wrapper" class="pl-imgloading" data-show-close-time="15000" data-max-load-time="0">
+<div class="loader-inner"><div id="loader">
+<div class="imgloading-container"><span style="background-image: url(./wp-content/uploads/2022/08/Group.png);"></span></div>
+<img width="150" height="61" data-no-lazy="1" class="skip-lazy" alt="loader image" src="./wp-content/uploads/2022/08/Group.png">
+</div></div>
+<div class="loader-section section-left"></div>
+<div class="loader-section section-right"></div>
+<div class="loader-close-button" style="display: none;"><span class="screen-reader-text">Close</span></div>
+</div>
 
 		<div data-elementor-type="header" data-elementor-id="230" class="elementor elementor-230 elementor-location-header">
 								<nav class="elementor-section elementor-top-section elementor-element elementor-element-408a65e elementor-section-full_width elementor-section-content-middle elementor-section-height-default elementor-section-height-default" data-id="408a65e" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -549,6 +572,39 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 </script>
 <script type="text/javascript" src="./wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.8" id="elementor-frontend-js"></script>
 <script type="text/javascript" src="./wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.7.3" id="pro-elements-handlers-js"></script>
-
+				<script type="text/javascript">
+					( function() {
+						function loftloader_finished() {
+							document.body.classList.add( 'loaded' );
+						}
+						var loader = document.getElementById( 'loftloader-wrapper' );
+						if ( loader ) {
+							window.addEventListener( 'load', function( e ) {
+								loftloader_finished();
+							} );
+							if ( loader.dataset && loader.dataset.showCloseTime ) {
+								var showCloseTime = parseInt( loader.dataset.showCloseTime, 10 ), maxLoadTime = false,
+									closeBtn = loader.getElementsByClassName( 'loader-close-button' );
+								if ( showCloseTime && closeBtn.length ) {
+									setTimeout( function() {
+										closeBtn[0].style.display = '';
+									}, showCloseTime );
+									closeBtn[0].addEventListener( 'click', function( e ) {
+										loftloader_finished();
+									} );
+								}
+							}
+							if ( loader.dataset.maxLoadTime ) {
+								maxLoadTime = loader.dataset.maxLoadTime;
+								maxLoadTime = parseInt( maxLoadTime, 10 );
+								if ( maxLoadTime ) {
+									setTimeout( function() {
+										loftloader_finished();
+									}, maxLoadTime );
+								}
+							}
+						}
+					} ) ();
+				</script> 
 </body>
 </html>
